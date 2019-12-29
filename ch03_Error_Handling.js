@@ -1,8 +1,10 @@
-const CustomError = (message) => {
-    this.message = message
-    this.type = 'NotImageFileException'
-    
-}
+'use strict'
+
+// 함수
+const CustomError = (message) => ({
+    message,
+    type: 'NotImageFileException'
+})
 
 try{
     const imgTypes = ['.jpg', '.png', '.gif']
@@ -11,7 +13,7 @@ try{
     const isImageFile = imgTypes.find(ext => filename.endsWith(ext))
 
     if (!isImageFile){
-        throw new CustomError("this is not an image file")
+        throw CustomError('this is not an image file')
     }
 
 } catch (e) {
