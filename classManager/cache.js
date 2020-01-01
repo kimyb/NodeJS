@@ -19,12 +19,4 @@ class cacheManager {
     }
 }
 
-
-const CacheManager = new cacheManager()
-CacheManager.addConfig({
-    port: 8000,
-    name: "jupyter"
-})
-CacheManager.deleteConfig()
-const config = CacheManager.getConfig()
-console.log(config)
+module.exports = cacheManager
